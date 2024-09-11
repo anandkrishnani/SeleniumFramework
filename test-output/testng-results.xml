@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-11T17:36:22 SGT" name="Open Cart Regression" finished-at="2024-09-11T17:36:44 SGT" duration-ms="22260">
+    <groups>
+    </groups>
+    <test started-at="2024-09-11T17:36:22 SGT" name="Account Page Test" finished-at="2024-09-11T17:36:42 SGT" duration-ms="20114">
+      <class name="personal.anand.qa.opencart.tests.AccountPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:personal.anand.qa.opencart.tests.AccountPageTest@3514a4c0]" started-at="2024-09-11T17:36:22 SGT" name="setup" finished-at="2024-09-11T17:36:35 SGT" duration-ms="12814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="accountPageSetup()[pri:0, instance:personal.anand.qa.opencart.tests.AccountPageTest@3514a4c0]" started-at="2024-09-11T17:36:35 SGT" name="accountPageSetup" finished-at="2024-09-11T17:36:40 SGT" duration-ms="5086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accountPageSetup -->
+        <test-method signature="accountHeadersTest()[pri:0, instance:personal.anand.qa.opencart.tests.AccountPageTest@3514a4c0]" started-at="2024-09-11T17:36:40 SGT" name="accountHeadersTest" finished-at="2024-09-11T17:36:42 SGT" duration-ms="1936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accountHeadersTest -->
+        <test-method signature="accountPageTitleTest()[pri:0, instance:personal.anand.qa.opencart.tests.AccountPageTest@3514a4c0]" started-at="2024-09-11T17:36:42 SGT" name="accountPageTitleTest" finished-at="2024-09-11T17:36:42 SGT" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accountPageTitleTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:personal.anand.qa.opencart.tests.AccountPageTest@3514a4c0]" started-at="2024-09-11T17:36:42 SGT" name="teardown" finished-at="2024-09-11T17:36:42 SGT" duration-ms="127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- personal.anand.qa.opencart.tests.AccountPageTest -->
+    </test> <!-- Account Page Test -->
+    <test started-at="2024-09-11T17:36:22 SGT" name="Login Page Test" finished-at="2024-09-11T17:36:42 SGT" duration-ms="19930">
+      <class name="personal.anand.qa.opencart.tests.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:personal.anand.qa.opencart.tests.LoginPageTest@140c9f39]" started-at="2024-09-11T17:36:22 SGT" name="setup" finished-at="2024-09-11T17:36:35 SGT" duration-ms="13033" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginPageTitleTest()[pri:0, instance:personal.anand.qa.opencart.tests.LoginPageTest@140c9f39]" started-at="2024-09-11T17:36:35 SGT" name="loginPageTitleTest" finished-at="2024-09-11T17:36:35 SGT" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method signature="loginTest()[pri:2147483647, instance:personal.anand.qa.opencart.tests.LoginPageTest@140c9f39]" started-at="2024-09-11T17:36:35 SGT" name="loginTest" finished-at="2024-09-11T17:36:42 SGT" duration-ms="6479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:personal.anand.qa.opencart.tests.LoginPageTest@140c9f39]" started-at="2024-09-11T17:36:42 SGT" name="teardown" finished-at="2024-09-11T17:36:42 SGT" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- personal.anand.qa.opencart.tests.LoginPageTest -->
+    </test> <!-- Login Page Test -->
+    <test started-at="2024-09-11T17:36:22 SGT" name="Register Page Test" finished-at="2024-09-11T17:36:44 SGT" duration-ms="22260">
+      <class name="personal.anand.qa.opencart.tests.RegisterPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:personal.anand.qa.opencart.tests.RegisterPageTest@3e84448c]" started-at="2024-09-11T17:36:22 SGT" name="setup" finished-at="2024-09-11T17:36:35 SGT" duration-ms="12815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="registerPageSetup()[pri:0, instance:personal.anand.qa.opencart.tests.RegisterPageTest@3e84448c]" started-at="2024-09-11T17:36:35 SGT" name="registerPageSetup" finished-at="2024-09-11T17:36:40 SGT" duration-ms="4945" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerPageSetup -->
+        <test-method signature="registerAccountTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:personal.anand.qa.opencart.tests.RegisterPageTest@3e84448c]" started-at="2024-09-11T17:36:40 SGT" name="registerAccountTest" data-provider="getRegisterAccountData" finished-at="2024-09-11T17:36:44 SGT" duration-ms="4183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rahul]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bhandaari]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[bhand112@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[98456832]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerAccountTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:personal.anand.qa.opencart.tests.RegisterPageTest@3e84448c]" started-at="2024-09-11T17:36:44 SGT" name="teardown" finished-at="2024-09-11T17:36:44 SGT" duration-ms="96" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- personal.anand.qa.opencart.tests.RegisterPageTest -->
+    </test> <!-- Register Page Test -->
+  </suite> <!-- Open Cart Regression -->
+</testng-results>
