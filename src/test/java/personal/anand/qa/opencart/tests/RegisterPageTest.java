@@ -13,22 +13,30 @@ public class RegisterPageTest extends BaseTest {
 
     @BeforeClass
     public void registerPageSetup() {
-        registerPage = loginPage.goToRegisterPage();
+        registerPage = loginPage.navigateToRegisterPage();
     }
 
     @DataProvider
     public Object[][] getRegisterAccountData() {
         return new Object[][]
                 {
-                        {"Rahul","Bhandaari","bhand112@gmail.com","98456832","1234"}
+                        {"Rahul","Bhandaari","98456832","1234"}
 
                 };
 
     }
 
+    /**
+     * Generate random email.
+     * @return email string.
+     */
+    public String generateRandomEmail(){
+        return "qa"+System.currentTimeMillis()+"@gmail.com";
+    }
+
     @Test(dataProvider = "getRegisterAccountData")
-    public void registerAccountTest(String fName, String lName, String email, String telephone, String password) {
-        String successMessageActual =registerPage.fillRegistrationPage(fName, lName, email, telephone, password);
+    public void registerAccountTest(String fName, String lName, String telephone, String password) {
+        String successMessageActual =registerPage.fillRegistrationPage(fName, lName, generateRandomEmail(), telephone, password);
         Assert.assertEquals(successMessageActual, AppConstants.REGISTRATION_ACCOUNT_CREATION);
 
     }

@@ -33,7 +33,7 @@ public class LoginPage {
 
     }
 
-    public RegisterPage goToRegisterPage(){
+    public RegisterPage navigateToRegisterPage(){
         elementUtils.doClick(registerLink, AppConstants.MEDIUM_TIMEOUT);
         return new RegisterPage(driver);
 

@@ -13,6 +13,8 @@ public class AccountPage {
     private WebDriver driver;
     private ElementUtils elementUtils;
     private By pageHeaders = By.xpath("//div[@id='content']/h2");
+    private By searchField =By.name("search");
+    private By searchButton=By.xpath("//div[@id='search']//button");
 
 
     public AccountPage(WebDriver driver) {
@@ -34,6 +36,13 @@ public class AccountPage {
             pageHeaderTextList.add(e.getText());
         }
         return pageHeaderTextList;
+    }
+
+    public SearchResultsPage doSearch(String searchKey){
+        elementUtils.doSendKeys(searchField, searchKey, AppConstants.MEDIUM_TIMEOUT);
+        elementUtils.doClick(searchButton);
+        return new SearchResultsPage(driver);
+
     }
 
 }

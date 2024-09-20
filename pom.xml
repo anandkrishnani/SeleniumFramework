@@ -23,13 +23,7 @@
     <artifactId>cucumber-java</artifactId>
     <version>7.15.0</version>
   </dependency>
-  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-  <dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.9.0</version>
-    <scope>test</scope>
-  </dependency>
+
   <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
   <dependency>
     <groupId>io.cucumber</groupId>
@@ -44,6 +38,26 @@
       <scope>compile</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.5.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.5.6</version>
+    </dependency>
+
+
   </dependencies>
 
   <properties>
@@ -51,5 +65,22 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+
+  <build>
+  <plugins>
+
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.3.0</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 
 </project>

@@ -39,9 +39,11 @@ public class ElementUtils {
     }
 
     public void doSendKeys(By locator, String value) {
+        getElement(locator).clear();
         getElement(locator).sendKeys(value);
     }
     public void doSendKeys(By locator, String value, int duration) {
+        getElement(locator,duration).clear();
         getElement(locator, duration).sendKeys(value);
     }
 
