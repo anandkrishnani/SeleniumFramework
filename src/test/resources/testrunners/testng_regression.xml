@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Open Cart Regression" verbose="4"  thread-count="3" parallel="tests">
+<suite name="Open Cart Regression" verbose="4"  thread-count="4" parallel="tests">
     <test name="Login Page Test" >
         <classes>
             <class name="personal.anand.qa.opencart.tests.LoginPageTest" />
@@ -16,6 +16,11 @@
     <test name="Register Page Test" >
         <classes>
             <class name="personal.anand.qa.opencart.tests.RegisterPageTest" />
+        </classes>
+    </test>
+    <test name="Product Info Page Test" >
+        <classes>
+            <class name="personal.anand.qa.opencart.tests.ProductInfoPageTest" />
         </classes>
     </test>
 </suite>

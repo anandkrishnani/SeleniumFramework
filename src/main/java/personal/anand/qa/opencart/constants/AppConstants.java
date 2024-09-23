@@ -18,5 +18,14 @@ public class AppConstants {
     public static final String MACBOOK_AIR_PRICE = "$1,202.00";
     public static final String I_MAC_PRICE="$122.00";
     public static final String SAMSUNG_GALAXY_TAB_10_1_PRICE= "$241.99";
+    public static final String ADD_CART_SUCCESS_MESSAGE ="Success: You have added %s to your shopping cart!";
+    public static final String MACBOOK_BRAND= "Apple";
+    public static final String MACBOOK_AIR_PRODUCT_CODE= "Product 17";
+    public static final String MACBOOK_PRO_PRODUCT_CODE= "Product 18";
+    public static final String CANNON_EOS_5D_PRODUCT_CODE= "Product 3";
+    public static final String MACBOOK_AIR_REWARDS_POINTS= "700";
+    public static final String MACBOOK_PRO_REWARDS_POINTS= "800";
+    public static final String CANNON_EOS_5D_REWARDS_POINTS= "200";
+
 }
 

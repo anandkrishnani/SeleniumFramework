@@ -2,44 +2,49 @@ package personal.anand.qa.opencart.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import personal.anand.qa.opencart.errors.AppError;
+import personal.anand.qa.opencart.exceptions.BrowserException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Properties;
 
 public class DriverFactory {
     private WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(DriverFactory.class);
     Properties prop;
+    private static ThreadLocal<WebDriver> tldriver = new ThreadLocal<WebDriver>();
 
     public WebDriver initDriver(Properties prop) {
-        if(Boolean.parseBoolean(prop.getProperty("remote"))){
+        OptionsManager optionsManager = new OptionsManager(prop);
+        if (Boolean.parseBoolean(prop.getProperty("remote"))) {
             try {
-                driver=new RemoteWebDriver(new URL(prop.getProperty("remote-url")),setChromeOptions());
+                tldriver.set(new RemoteWebDriver(new URL(prop.getProperty("remote-url")), optionsManager.getRemoteChromeOptions()));
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
-        }
-        else
-        {
+        } else {
             switch (prop.getProperty("browser").toLowerCase().trim()) {
                 case "chrome":
-                    driver = new ChromeDriver();
+                    tldriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
                     break;
                 default:
-                    break;
+                    logger.error("Browser {} is not a supported by this framework",prop.getProperty("browser"));
+                    throw new BrowserException(AppError.INVALID_BROWSER);
             }
         }
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.get(prop.getProperty("base-uri"));
-        return driver;
+        getDriver().manage().window().maximize();
+        getDriver().manage().deleteAllCookies();
+        getDriver().get(prop.getProperty("base-uri"));
+        return getDriver();
+    }
+
+    public static WebDriver getDriver() {
+        return tldriver.get();
     }
 
     public Properties initProp() {
@@ -48,7 +53,7 @@ public class DriverFactory {
         try {
             String envName = System.getProperty("env");
             FileInputStream file = null;
-            logger.info("running on {} environment",envName);
+            logger.info("running on {} environment", envName);
             if (envName == null) {
                 file = new FileInputStream("src/test/resources/config/qaconfig.properties");
 
@@ -61,7 +66,8 @@ public class DriverFactory {
                         file = new FileInputStream("src/test/resources/config/config.properties");
                         break;
                     default:
-                        break;
+                        logger.error("{} is not a valid environment",envName);
+                        throw new BrowserException("Invalid environment");
                 }
             }
             prop.load(file);
@@ -70,13 +76,6 @@ public class DriverFactory {
             throw new RuntimeException(e);
         }
         return prop;
-    }
-    private ChromeOptions setChromeOptions() {
-        ChromeOptions options =new ChromeOptions();
-        HashMap<String,Object> optionMap =new HashMap<String,Object>();
-        optionMap.put("enableVNC",Boolean.parseBoolean(prop.getProperty("enableVNC")));
-        options.setCapability("selenoid:options", optionMap);
-        return options;
     }
 
 }
