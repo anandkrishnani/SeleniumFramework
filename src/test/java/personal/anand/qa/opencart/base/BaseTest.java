@@ -17,7 +17,7 @@ public class BaseTest {
     DriverFactory df;
     protected Properties prop;
     WebDriver driver;
-    protected SoftAssert softAssert;
+    //protected SoftAssert softAssert;
     protected LoginPage loginPage;
     protected AccountPage accountPage;
     protected SearchResultsPage searchResultsPage;
@@ -29,11 +29,10 @@ public class BaseTest {
         prop = df.initProp();
         driver = df.initDriver(prop);
         loginPage=new LoginPage(driver);
-        softAssert = new SoftAssert();
     }
 
     @AfterTest
-    public void teardown(){
+    public void tearDown(){
         driver.quit();
 
     }

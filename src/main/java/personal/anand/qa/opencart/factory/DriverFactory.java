@@ -1,5 +1,6 @@
 package personal.anand.qa.opencart.factory;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -37,7 +38,8 @@ public class DriverFactory {
                     throw new BrowserException(AppError.INVALID_BROWSER);
             }
         }
-        getDriver().manage().window().maximize();
+        //getDriver().manage().window().maximize();
+        getDriver().manage().window().setSize(new Dimension(1200, 1000));
         getDriver().manage().deleteAllCookies();
         getDriver().get(prop.getProperty("base-uri"));
         return getDriver();

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="tests" name="Failed suite [Open Cart Regression]" guice-stage="DEVELOPMENT" verbose="4">
-  <test thread-count="3" parallel="tests" name="Account Page Test(failed)" verbose="4">
+<suite thread-count="4" parallel="tests" name="Failed suite [Open Cart Regression]" guice-stage="DEVELOPMENT" verbose="4">
+  <listeners>
+    <listener class-name="personal.anand.qa.opencart.listeners.AnnotationTransformer"/>
+    <listener class-name="personal.anand.qa.opencart.listeners.TestAllureListener"/>
+  </listeners>
+  <test thread-count="4" parallel="tests" name="Product Info Page Test(failed)" verbose="4">
     <classes>
-      <class name="personal.anand.qa.opencart.tests.AccountPageTest">
+      <class name="personal.anand.qa.opencart.tests.ProductInfoPageTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="accountHeadersTest"/>
-          <include name="teardown"/>
-          <include name="accountPageSetup"/>
-          <include name="accountPageTitleTest"/>
+          <include name="addToCartTest" invocation-numbers="2"/>
+          <include name="productInfoPageSetup"/>
         </methods>
-      </class> <!-- personal.anand.qa.opencart.tests.AccountPageTest -->
+      </class> <!-- personal.anand.qa.opencart.tests.ProductInfoPageTest -->
     </classes>
-  </test> <!-- Account Page Test(failed) -->
+  </test> <!-- Product Info Page Test(failed) -->
 </suite> <!-- Failed suite [Open Cart Regression] -->
