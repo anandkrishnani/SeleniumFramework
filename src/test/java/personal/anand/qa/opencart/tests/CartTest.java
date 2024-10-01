@@ -6,4 +6,8 @@ public class CartTest {
      */
 
     int i=10;
+
+    public void testMethod(){
+        System.out.println("hello");
+    }
 }
