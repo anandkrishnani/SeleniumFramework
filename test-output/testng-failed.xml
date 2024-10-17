@@ -5,16 +5,58 @@
     <listener class-name="personal.anand.qa.opencart.listeners.AnnotationTransformer"/>
     <listener class-name="personal.anand.qa.opencart.listeners.TestAllureListener"/>
   </listeners>
+  <test thread-count="4" parallel="tests" name="Register Page Test(failed)" verbose="4">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="personal.anand.qa.opencart.tests.RegisterPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="registerAccountTest"/>
+          <include name="registerPageSetup"/>
+        </methods>
+      </class> <!-- personal.anand.qa.opencart.tests.RegisterPageTest -->
+    </classes>
+  </test> <!-- Register Page Test(failed) -->
+  <test thread-count="4" parallel="tests" name="Login Page Test(failed)" verbose="4">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="personal.anand.qa.opencart.tests.LoginPageTest">
+        <methods>
+          <include name="loginPageTitleTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- personal.anand.qa.opencart.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- Login Page Test(failed) -->
   <test thread-count="4" parallel="tests" name="Product Info Page Test(failed)" verbose="4">
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="personal.anand.qa.opencart.tests.ProductInfoPageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="addToCartTest" invocation-numbers="2"/>
+          <include name="addToCartTest"/>
           <include name="productInfoPageSetup"/>
         </methods>
       </class> <!-- personal.anand.qa.opencart.tests.ProductInfoPageTest -->
     </classes>
   </test> <!-- Product Info Page Test(failed) -->
+  <test thread-count="4" parallel="tests" name="Account Page Test(failed)" verbose="4">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="personal.anand.qa.opencart.tests.AccountPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="accountHeadersTest"/>
+          <include name="accountPageSetup"/>
+          <include name="accountPageTitleTest"/>
+          <include name="SearchTest"/>
+        </methods>
+      </class> <!-- personal.anand.qa.opencart.tests.AccountPageTest -->
+    </classes>
+  </test> <!-- Account Page Test(failed) -->
 </suite> <!-- Failed suite [Open Cart Regression] -->
