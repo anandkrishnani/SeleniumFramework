@@ -40,15 +40,23 @@ public class OptionsManager {
 
     public ChromeOptions getRemoteChromeOptions() {
         chromeOptions = getChromeOptions();
+        chromeOptions.setCapability("browserName", "chrome");
+        chromeOptions.setBrowserVersion(properties.getProperty("browserVersion").trim());
         HashMap<String,Object> optionMap =new HashMap<String,Object>();
         optionMap.put("enableVNC",Boolean.parseBoolean(properties.getProperty("enableVNC")));
+        optionMap.put("screenResolution", "1280x1024x24");
+        optionMap.put("name", properties.getProperty("testname"));
         chromeOptions.setCapability("selenoid:options", optionMap);
         return chromeOptions;
     }
     public FirefoxOptions getRemoteFirefoxOptions() {
         firefoxOptions = getFirefoxOptions();
+        firefoxOptions.setCapability("browserName", "firefox");
+        firefoxOptions.setBrowserVersion(properties.getProperty("browserVersion").trim());
         HashMap<String,Object> optionMap =new HashMap<String,Object>();
         optionMap.put("enableVNC",Boolean.parseBoolean(properties.getProperty("enableVNC")));
+        optionMap.put("screenResolution", "1280x1024x24");
+        optionMap.put("name", properties.getProperty("testname"));
         firefoxOptions.setCapability("selenoid:options", optionMap);
         return firefoxOptions;
     }
