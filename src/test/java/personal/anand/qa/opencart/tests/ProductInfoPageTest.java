@@ -40,17 +40,17 @@ public class ProductInfoPageTest extends BaseTest {
         };
     }
 
-//    @Test(dataProvider = "metaData")
-//    public void checkProductMetaDataDetails(String searchKey, String product, String brand, String rewardPoints, String ProductCode) {
-//        SoftAssert softAssert=new SoftAssert();
-//        searchResultsPage = accountPage.doSearch(searchKey);
-//        productInfoPage = searchResultsPage.selectSearchresults(product);
-//        HashMap<String, String> actualProductDetails = productInfoPage.getProductMetaData();
-//        softAssert.assertEquals(actualProductDetails.get("Brand"), brand);
-//        softAssert.assertEquals(actualProductDetails.get("Reward Points"), rewardPoints);
-//        softAssert.assertEquals(actualProductDetails.get("Product Code"), ProductCode);
-//        softAssert.assertAll();
-//    }
+   @Test(dataProvider = "metaData")
+   public void checkProductMetaDataDetails(String searchKey, String product, String brand, String rewardPoints, String ProductCode) {
+       SoftAssert softAssert=new SoftAssert();
+       searchResultsPage = accountPage.doSearch(searchKey);
+       productInfoPage = searchResultsPage.selectSearchresults(product);
+       HashMap<String, String> actualProductDetails = productInfoPage.getProductMetaData();
+       softAssert.assertEquals(actualProductDetails.get("Brand"), brand);
+       softAssert.assertEquals(actualProductDetails.get("Reward Points"), rewardPoints);
+       softAssert.assertEquals(actualProductDetails.get("Product Code"), ProductCode);
+       softAssert.assertAll();
+   }
 
 
 }
