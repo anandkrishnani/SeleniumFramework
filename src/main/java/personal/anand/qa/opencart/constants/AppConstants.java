@@ -24,7 +24,7 @@ public class AppConstants {
     public static final String MACBOOK_PRO_PRODUCT_CODE= "Product 18";
     public static final String CANNON_EOS_5D_PRODUCT_CODE= "Product 3";
     public static final String MACBOOK_AIR_REWARDS_POINTS= "700";
-    public static final String MACBOOK_PRO_REWARDS_POINTS= "800";
+    public static final String MACBOOK_PRO_REWARDS_POINTS= "8001";
     public static final String CANNON_EOS_5D_REWARDS_POINTS= "200";
 
 }
